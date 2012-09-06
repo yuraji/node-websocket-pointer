@@ -1,6 +1,4 @@
-
-var port = 1337; // <-- you can edit port
-
+var port = 1337;
 
 
 var app = require('http').createServer(handler)
@@ -39,27 +37,6 @@ io.sockets.on('connection', function (socket) {
 	});
 	
 });
-
-
-
-
-
-// update all clients:
-// http://stackoverflow.com/questions/7352164/update-all-clients-using-socket-io
-// 
-// It's not actually sending an update to the other clients at all, instead it's just emitting to the client that just connected (which is why you see the update when you first load)
-// 
-// // socket is the *current* socket of the client that just connected
-// socket.emit('users_count', clients); 
-// Instead, you want to emit to all sockets
-// 
-// io.sockets.emit('users_count', clients);
-// Alternatively, you can use the broadcast function:
-// 
-// socket.broadcast.emit('users_count', clients);
-// Broadcasting means sending a message to everyone else except for the socket that starts it.
-
-
 
 
 

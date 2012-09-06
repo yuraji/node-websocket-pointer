@@ -23,3 +23,4 @@ visit
 or whatever domain you've set up - be sure to update index.html then:
 
 	var socket = io.connect('http://localhost:1337');
+	
