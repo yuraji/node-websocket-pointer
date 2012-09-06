@@ -23,16 +23,13 @@ function handler (req, res) {
 io.sockets.on('connection', function (socket) {
 		
 	socket.on('clickCoords', function(data) {
-		console.log( 'FROM CLIENT:', data );
+		// console.log( 'FROM CLIENT:', data );
 		
-		// socket.emit('drawCoords', data );
+		// socket.emit('drawCoords', data ); // this will only update self
 		io.sockets.emit('drawCoords', data );
 	});
 	
 	socket.on('click2Coords', function(data) {
-		console.log( 'FROM CLIENT:', data );
-		
-		// socket.emit('drawCoords', data );
 		io.sockets.emit('draw2Coords', data );
 	});
 	
